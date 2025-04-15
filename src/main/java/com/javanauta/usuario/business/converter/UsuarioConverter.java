@@ -36,11 +36,11 @@ public class UsuarioConverter {
 
     // Conversão de Endereço
     public List<Endereco> paraListaEndereco(List<EnderecoDTO> enderecoDTOs) {
-        return enderecoDTOs.stream().map(this::paraEndereco).collect(Collectors.toList());
+        return enderecoDTOs.stream().map(this::paraEndereco).toList();
     }
 
     public List<EnderecoDTO> paraListaEnderecoDTO(List<Endereco> enderecos) {
-        return enderecos.stream().map(this::paraEnderecoDTO).collect(Collectors.toList());
+        return enderecos.stream().map(this::paraEnderecoDTO).toList();
     }
 
     public Endereco paraEndereco(EnderecoDTO dto) {
@@ -48,6 +48,7 @@ public class UsuarioConverter {
                 .rua(dto.getRua())
                 .numero(dto.getNumero())
                 .cidade(dto.getCidade())
+                .complemento(dto.getComplemento())
                 .cep(dto.getCep())
                 .estado(dto.getEstado())
                 .build();
@@ -59,6 +60,7 @@ public class UsuarioConverter {
                 .rua(endereco.getRua())
                 .numero(endereco.getNumero())
                 .cidade(endereco.getCidade())
+                .complemento(endereco.getComplemento())
                 .cep(endereco.getCep())
                 .estado(endereco.getEstado())
                 .build();
