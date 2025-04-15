@@ -1,11 +1,9 @@
 package com.javanauta.usuario.infrastructure.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,7 +20,7 @@ public class Endereco {
     private String rua;
 
     @Column(name = "numero")
-    private String numero;
+    private Long numero;
 
     @Column(name = "complemento", length = 10)
     private String complemento;
